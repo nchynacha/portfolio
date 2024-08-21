@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3C4C70;
+    --secondary-color: #DCA1B0;
+    --background-color-1: antiquewhite;
+
+
+}
+
+body {
+    font-family: Cambria, 'Times New Roman', serif;
+    background: linear-gradient(to right,antiquewhite,#DCA1B0);
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+header {
+    background-color: var(--background-color-1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center elements vertically */
+    padding: 0px 20px;
+    height: 60px;
+
+}
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 15px;
+
+
+}
+
+.menu li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+
+    font-size: 18px;
+    transition: color 0.3s;
+    /* Smooth transition */
+    padding: 0px 10px;
+}
+
+.menu li a.active {
+    color: var(--secondary-color);
+    /* Change to the color you want for the active state */
+}
+
+.menu li a:hover {
+    color: var(--secondary-color);
+}
+
+.menu li a:after {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary-color);
+    height: 3px;
+    width: 0;
+    left: 0px;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.menu li a:hover:after {
+    width: 100%;
+}
+
+.banner-info {
+
+    color: var(--primary-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.banner-info h1 {
+    margin-bottom: 15px;
+    display: block;
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+    /* Set font size for banner heading */
+}
+
+.banner-info p {
+    
+    text-align: center;
+    
+    color: #526184;
+    font-size: 15px;
+}
+
+
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+
+/* About Me */
+
+#aboutme {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 40px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.aboutme-info {
+
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    width: 750px;
+    padding: 0 0 0 70px;
+}
+
+.aboutme-info h2 {
+    color: var(--primary-color);
+    font-size: 70px;
+
+    margin: 10px 0;
+    /* Add space around the heading */
+
+    text-align: start;
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    /* Adjust font size as needed */
+    padding-right: 20px;
+    /* Space between text and line */
+}
+
+.aboutme-info h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    /* Adjust to control length of the line */
+    height: 2px;
+    background: #e9cad3;
+    /* Line color */
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.aboutme-info h3 {
+    text-align: start;
+    margin: 10px 20px 0 0;
+    color: #576da1;
+
+}
+
+.aboutme-info p {
+    text-align: left;
+    word-wrap: break-word;
+    margin: 5px 20px 0 0;
+    color: var(--primary-color);
+
+}
+
+.picture {
+    background-color: #ddb8c1;
+    border-radius: 50px;
+
+}
+
+
+/* projects */
+
+#projects {
+    height: 100vh;
+    padding: 80px 0px 10px 0px;
+}
+
+
+
+.projects-container {
+    display: flex;
+    /* Arrange the buttons and slider in a row */
+    align-items: center;
+    /* Center align items vertically */
+}
+
+.projects-slider {
+    overflow-x: auto;
+    /* Allows horizontal scrolling */
+    white-space: nowrap;
+    /* Prevents line breaks within the grid */
+    flex-grow: 1;
+    /* Allows the slider to take up available space */
+    margin: 0 10px;
+    /* Adds space between the buttons and the slider */
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.projects-slider::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.projects {
+    display: flex;
+    /* Arrange the projects in a row */
+}
+
+.card-project {
+
+    margin-right: 20px;
+    /* Adds space between the cards */
+    color: #3C4C70;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card-project img {
+    transition: transform 0.3s ease;
+    border-radius: 30px;
+}
+
+.card-project:hover img {
+    transform: scale(1.05);
+    opacity: 0.7;
+
+}
+
+.card-project img {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-project:hover img {
+    transform: rotate(10deg);
+    /* หมุนรูปภาพเล็กน้อยเมื่อ hover */
+
+}
+
+.card-project .overlay-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* จัดตำแหน่งปุ่มกลางรูปภาพ */
+    opacity: 0;
+    /* ซ่อนปุ่มเมื่อไม่ hover */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* สีพื้นหลังของปุ่ม */
+    color: var(--secondary-color);
+    /* สีของข้อความในปุ่ม */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card-project:hover .overlay-button {
+    opacity: 1;
+    /* แสดงปุ่มเมื่อ hover */
+}
+
+.card-project {
+    position: relative;
+
+}
+
+.card-project h3 {
+    font-size: 25px;
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+.card-project p {
+    font-size: 15px;
+    text-align: center;
+
+}
+
+.scroll-button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scroll-button:hover {
+    color: var(--secondary-color);
+}
+
+.scroll-button i {
+    font-size: 50px;
+
+}
+
+/* Skills */
+
+#skills {
+    height: 100vh;
+    display: flex;
+
+    width: 100%;
+    padding: 60px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.skills-info {
+    border: solid 2px #e1adba;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: space-between;
+    /* จัดระยะห่างให้สม่ำเสมอ */
+    padding: 50px;
+    height: 95%;
+    width: 80%;
+
+}
+
+.text {
+    flex: 1;
+    margin-right: 50px;
+    /* ระยะห่างระหว่างข้อความและภาพ */
+
+}
+
+.text h1 {
+    color: var(--primary-color);
+    font-size: 40px;
+    padding: 0 0 30px 0;
+}
+
+.text h2 {
+    margin: 5px;
+    color: #3C4C70;
+
+}
+
+.text p {
+    color: #506085;
+    margin: 0 0 10px 0;
+}
+
+.picture img {
+    max-width: 100%;
+    /* ปรับขนาดรูปภาพให้พอดีกับพื้นที่ */
+    height: auto;
+    /* ป้องกันการบิดเบี้ยวของภาพ */
+    margin-right: 50px;
+}
+
+
+footer {
+    text-align: center;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3C4C70;
+    height: 200px;
+    padding: 20px 30px 0 0;
+    justify-content: space-around;
+    color: antiquewhite;
+
+}
+
+.contact-info {
+    width: 100%;
+    margin: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.contact-info p {
+    margin: 10px 0 0 0;
+    flex-shrink: 0;
+}
