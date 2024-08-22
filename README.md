@@ -18,6 +18,7 @@ This is a personal portfolio website built using HTML, CSS, and JavaScript. The 
 - **About Me**
 - **Projects**
 - **Contact**
+- - **Skills**
 
 
 
